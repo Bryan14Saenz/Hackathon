@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Etiqueta De Idioma -->
+<html lang="es">
+  <head>
+    <!-- MetaDatos -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tipografía -->
+
+    <!-- Hoja De Cascada -->
+    <link rel="stylesheet" href="Css/Style.css" />
+    <!-- JavaScript -->
+    <script src="JavaScript/script.js" defer></script>
+    <!-- Icono -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <!-- Titulo -->
+    <title>Portal Paciente</title>
+  </head>
+
+  <body>
+    <!-- Login -->
+    <div id="principal" class="contenedor">
+      <!-- Inicio De Sesión -->
+      <div class="contenedor">
+        <form class="inicioSesion sign-in">
+          <h2>Inicio De Sesión</h2>
+          <p>Use su correo y contraseña para ingresar</p>
+          <div class="input">
+            <input type="text" placeholder="Usuario" required />
+          </div>
+          <div class="input">
+            <input type="password" placeholder="Contraseña" required />
+          </div>
+          <div class="btn">
+            <a href="#inicio">INICIAR SESIÓN</a>
+          </div>
+          <a href="#recuperar">¿Olvidaste tu contraseña?</a>
+
+          <div class="redSocial">
+            <div class="redSocial__h2">
+              <h2>Nuestras Redes Sociales</h2>
+            </div>
+            <div>
+              <a href="https://facebook.com" target="_blank"
+                ><img
+                  src="node_modules/bootstrap-icons/icons/facebook.svg"
+                  alt="logo Facebook"
+              /></a>
+              <a href="https://instagram.com" target="_blank"
+                ><img
+                  src="node_modules/bootstrap-icons/icons/instagram.svg"
+                  alt="logo Instagram"
+              /></a>
+              <a href="https://twitter.com" target="_blank"
+                ><img
+                  src="node_modules/bootstrap-icons/icons/twitter-x.svg"
+                  alt="logo Twitter"
+              /></a>
+              <a href="https://whatsapp.com" target="_blank"
+                ><img
+                  src="node_modules/bootstrap-icons/icons/whatsapp.svg"
+                  alt="logo WhatsApp"
+              /></a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Crear Cuenta -->
+      <div class="contenedor">
+        <form class="inicioSesion sign-up">
+          <h2>Registrarse</h2>
+          <p>Ingresa tu datos para registrarte</p>
+          <div class="input">
+            <input type="text" placeholder="Nombre" required />
+          </div>
+          <div class="input">
+            <input type="text" placeholder="Apellido" required />
+          </div>
+          <div class="input">
+            <input type="email" placeholder="Example@gmail.com" required />
+          </div>
+          <div class="input">
+            <input type="password" placeholder="Contraseña" required />
+          </div>
+          <div class="input">
+            <select name="Tipo-Usuario" required>
+              <option value="Usuario1">Paciente</option>
+              <option value="Usuario2">Medico</option>
+            </select>
+          </div>
+          <div class="btn">
+            <a href="#inicio">REGISTRARSE</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Bienvenido -->
+      <div class="bienvenido">
+        <div class="bienvenido-sign-up mobil">
+          <h3>¡Bienvenido!</h3>
+          <p>
+            Ingrese sus datos personales para usar todas las funciones de
+            nuestro sitio
+          </p>
+          <button class="button" id="btn-sign-up">REGISTRARSE</button>
+        </div>
+        <div class="bienvenido-sign-in mobil">
+          <h3>¡Hola!</h3>
+          <p>
+            Regístrate con tus datos personales para usar todas las funciones de
+            nuestro sitio
+          </p>
+          <button class="button" id="btn-sign-in">INICIAR SESIÓN</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RecuperarCuenta -->
+    <div id="recuperar" class="contenedor">
+      <form class="recuperar">
+        <h2>¿Has olvidado tu contraseña?</h2>
+        <p>Ingrese su correo electrónico para recibir un código</p>
+        <div class="input">
+          <input type="text" placeholder="Correo" required />
+        </div>
+        <button class="btn">Enviar</button>
+        <!-- Sección Redes Sociales -->
+        <div class="redSocial">
+          <div>
+            <h3>Nuestras Redes Sociales</h3>
+          </div>
+          <div>
+            <a href="https://facebook.com" target="_blank"
+              ><img
+                src="node_modules/bootstrap-icons/icons/facebook.svg"
+                alt="logo Facebook"
+            /></a>
+            <a href="https://instagram.com" target="_blank"
+              ><img
+                src="node_modules/bootstrap-icons/icons/instagram.svg"
+                alt="logo Instagram"
+            /></a>
+            <a href="https://twitter.com" target="_blank"
+              ><img
+                src="node_modules/bootstrap-icons/icons/twitter-x.svg"
+                alt="logo Twitter"
+            /></a>
+            <a href="https://whatsapp.com" target="_blank"
+              ><img
+                src="node_modules/bootstrap-icons/icons/whatsapp.svg"
+                alt="logo WhatsApp"
+            /></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

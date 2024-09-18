@@ -1,0 +1,232 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Estilos Principales */
+#principal {
+  display: flex;
+  position: relative;
+  width: 800px;
+  height: 500px;
+  border-radius: 15px;
+  /* background-Color = */
+  box-shadow: 0px 0px 10px #000;
+}
+
+.contenedor {
+  overflow: hidden;
+  width: 50%;
+}
+
+/* Inicio De Sesion y Crear Cuenta */
+.inicioSesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.5s ease-in;
+  height: 100%;
+}
+
+.inicioSesion h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.inicioSesion p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.inicioSesion a {
+  font-size: 14px;
+  margin: 15px 0px;
+  /* Color = */
+}
+
+.input {
+  width: 240px;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  /* background-color = */
+}
+
+.input input {
+  border: none;
+  outline: none;
+  height: 100%;
+  font-size: 14px;
+  background-color: inherit;
+}
+
+.input select {
+  padding: 7px;
+  margin: 2px;
+  width: 220px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  /* background-color = */
+  /* color = */
+}
+
+.btn {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  /* background-color = */
+  /* color = */
+}
+
+.btn a {
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 10px;
+  padding: 10px;
+}
+
+.btn:hover {
+  border: 1px solid #000;
+  /* background-color = */
+}
+
+.redSocial {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.redSocial__h2 h3 {
+  font-size: 16px;
+}
+
+.redSocial a {
+  text-decoration: none;
+  margin: 0px 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Sección Bienvenida */
+.bienvenido {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+  border-radius: 50% 0 0 50%;
+  transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  transform: translateX(100%);
+  background-color: #eee;
+}
+
+.bienvenido .mobil {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.bienvenido h3 {
+  font-size: 40px;
+}
+
+.bienvenido p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.bienvenido .button {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  /* Agregar Hover al Botón */
+}
+
+/* Animaciones De Sección De Bienvenida */
+.bienvenido-sign-in {
+  transform: translateX(100%);
+}
+
+#principal.toggle .bienvenido {
+  border-radius: 0 50% 50% 0;
+  transform: translateX(0);
+  background-color: #eee;
+}
+
+#principal.toggle .bienvenido-sign-in {
+  transform: translateX(0);
+}
+
+#principal.toggle .bienvenido-sign-up {
+  transform: translateX(-100%);
+}
+
+/* Recuperar */
+#recuperar {
+  display: none;
+  width: 300px;
+  padding: 40px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#recuperar h2 {
+  margin: 10px 0px;
+  font-size: 20px;
+}
+
+#recuperar p {
+  margin: 10px 0px;
+  font-size: 16px;
+}
+
+#recuperar .btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  /* background-color = */
+  /* color = */
+}
+
+#recuperar .btn a {
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 10px;
+  padding: 10px;
+}
+
+#recuperar .btn:hover {
+  border: 1px solid #000;
+  /* background-color = */
+}
+
+#recuperar h3 {
+  font-size: 20px;
+  margin: 40px 0px;
+}
