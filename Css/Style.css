@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -10,6 +12,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background:url(../Img/Fondo.png);
+  background-size: contain;
 }
 
 /* Estilos Principales */
@@ -19,8 +23,8 @@ body {
   width: 800px;
   height: 500px;
   border-radius: 15px;
-  /* background-Color = */
-  box-shadow: 0px 0px 10px #000;
+  box-shadow: 5px 5px 5px #000;
+  background-color: transparent;
 }
 
 .contenedor {
@@ -51,7 +55,11 @@ body {
 .inicioSesion a {
   font-size: 14px;
   margin: 15px 0px;
-  /* Color = */
+  color: #000;
+}
+
+.inicioSesion a:hover{
+  color: #0009;
 }
 
 .input {
@@ -60,7 +68,11 @@ body {
   padding: 0 15px;
   border-radius: 10px;
   margin-bottom: 10px;
-  /* background-color = */
+  background-color: #05ffea;
+}
+
+.input:active{
+  border: 1px solid #000;
 }
 
 .input input {
@@ -73,35 +85,36 @@ body {
 
 .input select {
   padding: 7px;
-  margin: 2px;
+  margin: 3px;
   width: 220px;
   font-size: 14px;
   outline: none;
   border: none;
-  /* background-color = */
-  /* color = */
+  background-color: #05ffea ;
+  color: #0007;
 }
 
 .btn {
   cursor: pointer;
-  width: 150px;
+  width: 140px;
   height: 40px;
   margin-top: 10px;
-  border-radius: 5px;
-  /* background-color = */
-  /* color = */
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #00ffea;
 }
 
-.btn a {
+.btn span {
+  display: block;
   text-align: center;
   text-decoration: none;
-  margin: 10px 10px;
-  padding: 10px;
+  font-size: 14px;
+  margin: 12px auto;
 }
 
 .btn:hover {
   border: 1px solid #000;
-  /* background-color = */
+  background-color: transparent;
 }
 
 .redSocial {
@@ -118,7 +131,8 @@ body {
   text-decoration: none;
   margin: 0px 15px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px #000;
 }
 
 /* Sección Bienvenida */
@@ -132,7 +146,7 @@ body {
   border-radius: 50% 0 0 50%;
   transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
   transform: translateX(100%);
-  background-color: #eee;
+  background-color: #05ffea;
 }
 
 .bienvenido .mobil {
@@ -158,9 +172,12 @@ body {
   cursor: pointer;
   font-weight: bold;
   padding: 10px;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 5px;
-  /* Agregar Hover al Botón */
+}
+
+.bienvenido .button:hover{
+  background-color: transparent;
 }
 
 /* Animaciones De Sección De Bienvenida */
@@ -171,7 +188,6 @@ body {
 #principal.toggle .bienvenido {
   border-radius: 0 50% 50% 0;
   transform: translateX(0);
-  background-color: #eee;
 }
 
 #principal.toggle .bienvenido-sign-in {
@@ -187,9 +203,31 @@ body {
   display: none;
   width: 300px;
   padding: 40px 20px;
-  border: 1px solid black;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 5px 5px 5px #000;
+  background-color: transparent;
+}
+
+.btnRegresar{
+  display: block;
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #00ffea;
+}
+
+.btnRegresar img {
+  width: 15px;
+  margin: 11px auto;
+}
+
+.btnRegresar:hover {
+  border: 1px solid #000;
+  background-color: transparent;
 }
 
 #recuperar h2 {
@@ -206,27 +244,157 @@ body {
   cursor: pointer;
   outline: none;
   border: none;
+  font-size: 14px;
   width: 150px;
   height: 40px;
   margin-top: 10px;
-  border-radius: 5px;
-  /* background-color = */
-  /* color = */
+  border-radius: 10px;
 }
 
-#recuperar .btn a {
-  text-align: center;
-  text-decoration: none;
-  margin: 10px 10px;
-  padding: 10px;
-}
-
-#recuperar .btn:hover {
+#recuperar .btn:hover{
   border: 1px solid #000;
-  /* background-color = */
 }
 
 #recuperar h3 {
   font-size: 20px;
   margin: 40px 0px;
+}
+
+/* Barra De Navegación */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.nav__logo {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+
+.nav__contenedor {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.nav__contenedor-item{
+  margin-right: 25px;
+}
+
+.nav__contenedor-item a img{
+  width: 30px;
+}
+
+/* Sección Principal */
+.inicio {
+  display: flex;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.inicio__contenedor {
+  margin: 0px 20px;
+  text-align: center;
+}
+
+.contenedor_multimedia {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+}
+
+.contenedor_multimedia:hover{
+  opacity: 0.5;
+}
+
+.contenedor-btn .btn{
+  font-weight: bold;
+  font-size: 14px;
+  width: 70px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.contenedor-btn .btn:hover{
+  border: 1px solid #000;
+  background-color: transparent;
+}
+
+/* Mapa Interactivo */
+.inicio__contenedor img{
+  width: 200px;
+}
+
+.inicio__contenedor .localizacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.inicio__contenedor .localizacion p {
+  margin: 10px;
+  padding: 10px;
+}
+
+.inicio__contenedor .localizacion div {
+  margin: 10px;
+}
+
+.noOpacity:hover{
+  opacity: 1;
+}
+
+/* Mostrar y Ocultar */
+#contenidoPrincipal{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+}
+
+#historial{
+  display: none;
+}
+
+#actividades{
+  display: none;
+}
+
+#mapaInteractivo{
+  display: none;
+}
+
+#admision{
+  display: none;
+}
+
+#vacunacion{
+  display: none;
+}
+
+#glucosa{
+  display: none;
+}
+
+#citas{
+  display: none;
+}
+
+#medicamentos{
+  display: none;
+}
+
+#educacion{
+  display: none;
+}
+
+#perfil{
+  display: none;
 }

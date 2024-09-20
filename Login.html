@@ -8,7 +8,7 @@
     <!-- Tipografía -->
 
     <!-- Hoja De Cascada -->
-    <link rel="stylesheet" href="Css/Style.css" />
+    <link rel="stylesheet" href="Css/style.css" />
     <!-- JavaScript -->
     <script src="JavaScript/script.js" defer></script>
     <!-- Icono -->
@@ -31,10 +31,12 @@
           <div class="input">
             <input type="password" placeholder="Contraseña" required />
           </div>
-          <div class="btn">
-            <a href="#inicio">INICIAR SESIÓN</a>
-          </div>
-          <a href="#recuperar">¿Olvidaste tu contraseña?</a>
+          <button class="btn" onclick="mostrarInicio()">
+            <span>INICIAR SESION</span>
+          </button>
+          <a href="#recuperar" onclick="mostrarRecuperar()"
+            >¿Olvidaste tu contraseña?</a
+          >
 
           <div class="redSocial">
             <div class="redSocial__h2">
@@ -89,9 +91,9 @@
               <option value="Usuario2">Medico</option>
             </select>
           </div>
-          <div class="btn">
-            <a href="#inicio">REGISTRARSE</a>
-          </div>
+          <button class="btn" onclick="mostrarInicio()">
+            <span>CREAR CUENTA</span>
+          </button>
         </form>
       </div>
 
@@ -118,6 +120,9 @@
 
     <!-- RecuperarCuenta -->
     <div id="recuperar" class="contenedor">
+      <button class="btnRegresar" onclick="regresarLogin()">
+        <img src="node_modules/bootstrap-icons/icons/backspace.svg" alt="" />
+      </button>
       <form class="recuperar">
         <h2>¿Has olvidado tu contraseña?</h2>
         <p>Ingrese su correo electrónico para recibir un código</p>
@@ -155,5 +160,409 @@
         </div>
       </form>
     </div>
+
+    <main id="contenidoPrincipal">
+      <!-- Barra De Navegación -->
+      <nav class="nav">
+        <div class="nav__logo">
+          <img src="" alt="Logo  de Pagina" />
+        </div>
+        <ul class="nav__contenedor">
+          <li class="nav__contenedor-item">
+            <a href="#">
+              <img src="node_modules/bootstrap-icons/icons/" alt="icono"
+            /></a>
+          </li>
+          <li class="nav__contenedor-item">
+            <a href="#">
+              <img
+                src="node_modules/bootstrap-icons/icons/book-fill.svg"
+                alt="icono"
+              />
+            </a>
+          </li>
+          <li class="nav__contenedor-item">
+            <a href="#"
+              ><img
+                src="node_modules/bootstrap-icons/icons/wechat.svg"
+                alt="icono"
+            /></a>
+          </li>
+          <li class="nav__contenedor-item">
+            <a href="#"
+              ><img
+                src="node_modules/bootstrap-icons/icons/person-circle.svg"
+                alt="icono"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Primera Sección Inicio -->
+      <section id="main" class="inicio">
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Historiales</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarhistorial()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Actividades</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarActividades()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Mapa Interactivo</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostarMapaInteractivo()">
+              Entrar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Historial -->
+      <section id="historial" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarMain()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Admisión</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostarAdmision()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Vacunación</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarVacunacion()">Entrar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Actividades -->
+      <section id="actividades" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarMain()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Registro De Glucosa</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarGlucosa()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Citas Medicas</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarCitas()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="contenedor_multimedia">
+            <h2>Medicamentos</h2>
+            <div>
+              <img src="" alt="botón" />
+            </div>
+          </div>
+          <div class="contenedor-btn">
+            <button class="btn" onclick="mostrarMedicamentos()">Entrar</button>
+          </div>
+        </div>
+        <div class="inicio__contenedor-btn">
+          <button class="btn">
+            <img
+              src="node_modules/bootstrap-icons/icons/search.svg"
+              alt="Buscador"
+            />
+          </button>
+        </div>
+      </section>
+
+      <!-- Sección Mapa Interactivo -->
+      <section id="mapaInteractivo" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarMain()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor noOpacity">
+          <div class="contenedor__mapa">
+            <h2>Mapa De Los Centros De Carazo</h2>
+            <div style="max-width: 700px">
+              <!-- Keep map above fold -->
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+        <div class="inicio__contenedor noOpacity">
+          <div class="localizacion">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Similique omnis sit,
+            </p>
+            <div>
+              <img src="" alt="Ciudad" />
+            </div>
+          </div>
+          <div class="localizacion">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Similique omnis sit,
+            </p>
+            <div>
+              <img src="" alt="Ciudad" />
+            </div>
+          </div>
+          <div class="localizacion">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Similique omnis sit,
+            </p>
+            <div>
+              <img src="" alt="Ciudad" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1ra Sección Interna De Historial -->
+      <section id="admision" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarHistorial()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <button>Agregar</button>
+          <div>
+            <table>
+              <th>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+              </th>
+              <td>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+              </td>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2da Sección Interna De Historial -->
+      <section id="vacunacion" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarHistorial()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <div class="inicio__contenedor">
+            <button>Agregar</button>
+            <div>
+              <table>
+                <th>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                </th>
+                <td>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                </td>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1ra Sección Interna De Actividades  -->
+      <section id="glucosa" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarActividades()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <button>Agregar</button>
+          <ul>
+            <li>1-</li>
+            <li>2-</li>
+            <li>3-</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 2da Sección Interna De Actividades  -->
+      <section id="citas" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarActividades()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <button>Agregar</button>
+          <ul>
+            <li>1-</li>
+            <li>2-</li>
+            <li>3-</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3ra Sección Interna De Actividades  -->
+      <section id="medicamentos" class="inicio">
+        <div>
+          <button class="btnRegresar" onclick="regresarActividades()">
+            <img
+              src="node_modules/bootstrap-icons/icons/backspace.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="inicio__contenedor">
+          <button>Agregar</button>
+          <ul>
+            <li>1-</li>
+            <li>2-</li>
+            <li>3-</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sección Educación -->
+      <section id="educacion">
+        <div class="inicio__contenedor">
+          <aside>
+            <h2>Titulo</h2>
+            <p>Texto</p>
+          </aside>
+          <div></div>
+        </div>
+      </section>
+
+      <!-- Sección Perfil -->
+      <section id="perfil" class="inicio">
+        <div class="inicio__contenedor">
+          <div>
+            <img src="" alt="Foto perfil" />
+            <h3>Nombre</h3>
+          </div>
+          <div>
+            <h3>configuración:</h3>
+            <p>texto párrafo</p>
+            <h3>configuración:</h3>
+            <p>texto párrafo</p>
+            <h3>configuración:</h3>
+            <p>texto párrafo</p>
+            <h3>configuración:</h3>
+            <p>texto párrafo</p>
+            <h3>configuración:</h3>
+            <p>texto párrafo</p>
+          </div>
+          <button>Cerrar Sesion</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
