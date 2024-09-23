@@ -11,8 +11,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background:url(../Img/Fondo.png);
+  position: relative;
+  min-height: 100dvh;
+  background: url(../Img/Fondo.png);
   background-size: contain;
 }
 
@@ -58,7 +59,7 @@ body {
   color: #000;
 }
 
-.inicioSesion a:hover{
+.inicioSesion a:hover {
   color: #0009;
 }
 
@@ -71,7 +72,7 @@ body {
   background-color: #05ffea;
 }
 
-.input:active{
+.input:active {
   border: 1px solid #000;
 }
 
@@ -90,7 +91,7 @@ body {
   font-size: 14px;
   outline: none;
   border: none;
-  background-color: #05ffea ;
+  background-color: #05ffea;
   color: #0007;
 }
 
@@ -98,7 +99,7 @@ body {
   cursor: pointer;
   width: 140px;
   height: 40px;
-  margin-top: 10px;
+  margin: 10px auto;
   border-radius: 10px;
   border: 1px solid transparent;
   background-color: #00ffea;
@@ -176,7 +177,7 @@ body {
   border-radius: 5px;
 }
 
-.bienvenido .button:hover{
+.bienvenido .button:hover {
   background-color: transparent;
 }
 
@@ -209,7 +210,7 @@ body {
   background-color: transparent;
 }
 
-.btnRegresar{
+.btnRegresar {
   display: block;
   cursor: pointer;
   width: 60px;
@@ -251,7 +252,7 @@ body {
   border-radius: 10px;
 }
 
-#recuperar .btn:hover{
+#recuperar .btn:hover {
   border: 1px solid #000;
 }
 
@@ -270,9 +271,15 @@ body {
 }
 
 .nav__logo {
+  display: flex;
+  align-items: center;
   width: 70px;
   height: 70px;
   margin: 10px;
+}
+
+.nav__logo img {
+  width: 70px;
 }
 
 .nav__contenedor {
@@ -281,25 +288,57 @@ body {
   margin: 10px;
 }
 
-.nav__contenedor-item{
+.contenedor__item {
   margin-right: 25px;
 }
 
-.nav__contenedor-item a img{
-  width: 30px;
+.contenedor__item .icon-nav {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #20b2aa66;
+}
+
+.contenedor__item .icon-nav:hover {
+  border: 1px solid #000;
+  background-color: transparent;
+}
+
+.icon-nav img {
+  width: 20px;
 }
 
 /* Sección Principal */
 .inicio {
   display: flex;
-  margin: 100px auto;
+  margin: 85px auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #000;
 }
 
 .inicio__contenedor {
-  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  margin: 0px 20px;
+}
+
+.inicio__contenedor img {
+  width: 35px;
+}
+
+.inicio__contenedor-btn {
+  display: flex;
+  align-items: center;
+}
+
+.inicio__contenedor-btn .busqueda {
+  width: 60px;
+  margin: 10px;
 }
 
 .contenedor_multimedia {
@@ -309,11 +348,19 @@ body {
   box-shadow: 1px 1px 1px #000;
 }
 
-.contenedor_multimedia:hover{
+.contenedor_multimedia h2 {
+  margin-bottom: 15px;
+}
+
+.contenedor_multimedia img {
+  width: 70px;
+}
+
+.contenedor_multimedia img:hover {
   opacity: 0.5;
 }
 
-.contenedor-btn .btn{
+.contenedor-btn .btn {
   font-weight: bold;
   font-size: 14px;
   width: 70px;
@@ -321,17 +368,13 @@ body {
   margin-bottom: 20px;
 }
 
-.contenedor-btn .btn:hover{
+.contenedor-btn .btn:hover {
   border: 1px solid #000;
   background-color: transparent;
 }
 
 /* Mapa Interactivo */
-.inicio__contenedor img{
-  width: 200px;
-}
-
-.inicio__contenedor .localizacion{
+.inicio__contenedor .localizacion {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,54 +390,306 @@ body {
   margin: 10px;
 }
 
-.noOpacity:hover{
+.noOpacity:hover {
   opacity: 1;
 }
 
+/* Admision */
+.admision {
+  padding: 15px;
+}
+
+.admision h2 {
+  margin: 10px;
+}
+
+.admision__contenedor {
+  margin: 15px;
+}
+
+.admision .contenedor__item {
+  padding: 1px;
+  display: inline-block;
+}
+
+.admision li {
+  font-size: 16px;
+  margin: 5px;
+  list-style: decimal;
+}
+
+/* Vacunacion */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0009;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-modal {
+  background-color: #05ffea;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.cerrar {
+  color: #000;
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.contenedor-modal h3 {
+  margin: 10px 0px;
+}
+
+.contenedor-modal input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.contenedor-modal button {
+  background-color: #0097e7;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contenedor-modal button:hover {
+  background-color: #00cccc;
+}
+
+/* Sección Educacion */
+#educacion {
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: none;
+  width: 100%;
+  height: 100dvh;
+  padding: 10px;
+  margin: 40px auto;
+}
+
+.educacion__contenedor {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.educacion__contenedor aside {
+  width: 30%;
+  padding: 20px;
+}
+
+.educacion__contenedor div {
+  width: 70%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.educacion__contenedor aside,
+.educacion__contenedor div {
+  border: 1px solid #000;
+}
+
+/* Sección Notificaciones */
+.notification-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #20b2aa66;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.notification-icon:hover{
+  border: 1px solid #000;
+}
+
+.notification-icon img {
+  width: 20px;
+}
+
+.notification-counter {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: #05ffea;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.notification-list {
+  position: absolute;
+  top: 70px;
+  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #000;
+  display: none;
+}
+
+.notification-list ul {
+  padding: 10px;
+}
+
+.notification-list ul li {
+  padding: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.notification-list ul li:last-child {
+  border-bottom: none;
+}
+
+.notification-list ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* sección Perfil */
+#perfil {
+  margin: 25px auto;
+}
+
+.perfil__imagen {
+  margin: 15px;
+  padding: 10px;
+}
+
+.perfil__imagen img {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.perfil__imagen h3 {
+  font-size: 14px;
+}
+
+.confi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.confi h2 {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.confi p {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+#perfil .btn {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Sección Buscar */
+#searchForm {
+  margin-bottom: 10px;
+}
+
+#searchForm input[type='text'] {
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+#searchForm button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#resultado {
+  position: absolute;
+  top: 120px;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  text-align: center;
+  background-color: #20b2aa66;
+}
+
+.footer__contenido {
+  padding: 10px;
+}
+
+.footer__contenido p {
+  font-size: 14px;
+}
+
+.footer__contenido h3 {
+  font-size: 14px;
+}
+
 /* Mostrar y Ocultar */
-#contenidoPrincipal{
+#contenidoPrincipal {
   display: none;
   flex-direction: column;
   width: 100%;
   height: 100dvh;
 }
 
-#historial{
+#historial {
   display: none;
 }
 
-#actividades{
+#actividades {
   display: none;
 }
 
-#mapaInteractivo{
+#mapaInteractivo {
   display: none;
 }
 
-#admision{
+#admision {
   display: none;
+  flex-direction: column;
 }
 
-#vacunacion{
+#vacunacion {
   display: none;
+  flex-direction: column;
 }
 
-#glucosa{
+#glucosa {
   display: none;
+  flex-direction: column;
 }
 
-#citas{
+#citas {
   display: none;
+  flex-direction: column;
 }
 
-#medicamentos{
+#medicamentos {
   display: none;
-}
-
-#educacion{
-  display: none;
-}
-
-#perfil{
-  display: none;
+  flex-direction: column;
 }

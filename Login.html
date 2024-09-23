@@ -14,7 +14,7 @@
     <!-- Icono -->
     <link rel="shortcut icon" href="" type="image/x-icon" />
     <!-- Titulo -->
-    <title>Portal Paciente</title>
+    <title>DiabetiControl</title>
   </head>
 
   <body>
@@ -26,10 +26,15 @@
           <h2>Inicio De Sesión</h2>
           <p>Use su correo y contraseña para ingresar</p>
           <div class="input">
-            <input type="text" placeholder="Usuario" required />
+            <input type="text" name="Usuario" placeholder="Usuario" required />
           </div>
           <div class="input">
-            <input type="password" placeholder="Contraseña" required />
+            <input
+              type="password"
+              name="Contraseña"
+              placeholder="Contraseña"
+              required
+            />
           </div>
           <button class="btn" onclick="mostrarInicio()">
             <span>INICIAR SESION</span>
@@ -46,22 +51,22 @@
               <a href="https://facebook.com" target="_blank"
                 ><img
                   src="node_modules/bootstrap-icons/icons/facebook.svg"
-                  alt="logo Facebook"
+                  alt="Facebook"
               /></a>
               <a href="https://instagram.com" target="_blank"
                 ><img
                   src="node_modules/bootstrap-icons/icons/instagram.svg"
-                  alt="logo Instagram"
+                  alt="Instagram"
               /></a>
               <a href="https://twitter.com" target="_blank"
                 ><img
                   src="node_modules/bootstrap-icons/icons/twitter-x.svg"
-                  alt="logo Twitter"
+                  alt="Twitter"
               /></a>
               <a href="https://whatsapp.com" target="_blank"
                 ><img
                   src="node_modules/bootstrap-icons/icons/whatsapp.svg"
-                  alt="logo WhatsApp"
+                  alt="WhatsApp"
               /></a>
             </div>
           </div>
@@ -129,7 +134,7 @@
         <div class="input">
           <input type="text" placeholder="Correo" required />
         </div>
-        <button class="btn">Enviar</button>
+        <button class="btn" onclick="enviarCorreo()">Enviar</button>
         <!-- Sección Redes Sociales -->
         <div class="redSocial">
           <div>
@@ -139,22 +144,21 @@
             <a href="https://facebook.com" target="_blank"
               ><img
                 src="node_modules/bootstrap-icons/icons/facebook.svg"
-                alt="logo Facebook"
+                alt="Facebook"
             /></a>
             <a href="https://instagram.com" target="_blank"
               ><img
                 src="node_modules/bootstrap-icons/icons/instagram.svg"
-                alt="logo Instagram"
+                alt="Instagram"
             /></a>
             <a href="https://twitter.com" target="_blank"
-              ><img
-                src="node_modules/bootstrap-icons/icons/twitter-x.svg"
-                alt="logo Twitter"
-            /></a>
+              ><img src="node_modules/bootstrap-icons/icons/twitter-x.svg"
+              alt=Twitter" /></a
+            >
             <a href="https://whatsapp.com" target="_blank"
               ><img
                 src="node_modules/bootstrap-icons/icons/whatsapp.svg"
-                alt="logo WhatsApp"
+                alt="WhatsApp"
             /></a>
           </div>
         </div>
@@ -165,36 +169,66 @@
       <!-- Barra De Navegación -->
       <nav class="nav">
         <div class="nav__logo">
-          <img src="" alt="Logo  de Pagina" />
+          <img src="Img/Logo.svg" alt="Logo de la Pagina" />
+          <h1>DiabetiControl</h1>
         </div>
         <ul class="nav__contenedor">
-          <li class="nav__contenedor-item">
-            <a href="#">
-              <img src="node_modules/bootstrap-icons/icons/" alt="icono"
-            /></a>
-          </li>
-          <li class="nav__contenedor-item">
-            <a href="#">
+          <li class="contenedor__item">
+            <button class="icon-nav" onclick="mostrarEducacion()">
               <img
-                src="node_modules/bootstrap-icons/icons/book-fill.svg"
-                alt="icono"
+                src="node_modules/bootstrap-icons/icons/book.svg"
+                alt="Educación"
               />
-            </a>
+            </button>
           </li>
-          <li class="nav__contenedor-item">
-            <a href="#"
-              ><img
-                src="node_modules/bootstrap-icons/icons/wechat.svg"
-                alt="icono"
-            /></a>
+          <li class="contenedor__item">
+            <div class="notification-icon" onclick="toggleNotifications()">
+              <img
+                src="node_modules/bootstrap-icons/icons/chat.svg"
+                alt="Notificación"
+              />
+              <span id="notification-counter" class="notification-counter"
+                >3</span
+              >
+            </div>
+
+            <div id="notification-list" class="notification-list">
+              <ul>
+                <li>Nuevo mensaje de Carlos</li>
+                <li>Resultado de prueba disponible</li>
+                <li>Actualización de perfil exitosa</li>
+              </ul>
+            </div>
           </li>
-          <li class="nav__contenedor-item">
-            <a href="#"
-              ><img
+          <li class="contenedor__item">
+            <button class="icon-nav" onclick="mostrarPerfil()">
+              <img
                 src="node_modules/bootstrap-icons/icons/person-circle.svg"
-                alt="icono"
-            /></a>
+                alt="Perfil"
+              />
+            </button>
           </li>
+          <div class="inicio__contenedor-btn">
+            <div id="buscar" style="display: none" class="inicio__contenedor">
+              <h3>Buscar Paciente por Nombre</h3>
+              <form id="searchForm">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Ingrese el nombre del paciente"
+                />
+                <button type="button" onclick="buscarPaciente()">Buscar</button>
+              </form>
+
+              <div id="resultado"></div>
+            </div>
+            <button class="btn busqueda" onclick="mostarBuscador()">
+              <img
+                src="node_modules/bootstrap-icons/icons/search.svg"
+                alt="Buscador"
+              />
+            </button>
+          </div>
         </ul>
       </nav>
 
@@ -204,7 +238,7 @@
           <div class="contenedor_multimedia">
             <h2>Historiales</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/Historial.svg" alt="Historiales" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -215,7 +249,7 @@
           <div class="contenedor_multimedia">
             <h2>Actividades</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/Actividades.svg" alt="Actividades medicas" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -226,7 +260,7 @@
           <div class="contenedor_multimedia">
             <h2>Mapa Interactivo</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/MapaInteractivo.svg" alt="Mapa interactivo" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -243,7 +277,7 @@
           <button class="btnRegresar" onclick="regresarMain()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
@@ -251,7 +285,7 @@
           <div class="contenedor_multimedia">
             <h2>Admisión</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/svg.png" alt="Admisiones Medicas" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -262,7 +296,7 @@
           <div class="contenedor_multimedia">
             <h2>Vacunación</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/svg.png" alt="Vacunaciones" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -277,7 +311,7 @@
           <button class="btnRegresar" onclick="regresarMain()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
@@ -285,7 +319,7 @@
           <div class="contenedor_multimedia">
             <h2>Registro De Glucosa</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/Glucosa.svg" alt="Registro de glucosa" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -296,7 +330,7 @@
           <div class="contenedor_multimedia">
             <h2>Citas Medicas</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/svg.png" alt="Registro de citas medicas" />
             </div>
           </div>
           <div class="contenedor-btn">
@@ -307,20 +341,12 @@
           <div class="contenedor_multimedia">
             <h2>Medicamentos</h2>
             <div>
-              <img src="" alt="botón" />
+              <img src="Img/svg.png" alt="Medicamentos" />
             </div>
           </div>
           <div class="contenedor-btn">
             <button class="btn" onclick="mostrarMedicamentos()">Entrar</button>
           </div>
-        </div>
-        <div class="inicio__contenedor-btn">
-          <button class="btn">
-            <img
-              src="node_modules/bootstrap-icons/icons/search.svg"
-              alt="Buscador"
-            />
-          </button>
         </div>
       </section>
 
@@ -330,45 +356,44 @@
           <button class="btnRegresar" onclick="regresarMain()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
         <div class="inicio__contenedor noOpacity">
           <div class="contenedor__mapa">
-            <h2>Mapa De Los Centros De Carazo</h2>
-            <div style="max-width: 700px">
-              <!-- Keep map above fold -->
-              <div id="map"></div>
+            <h2>Mapa De Los Centros De Salud De Carazo</h2>
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d499613.4580380483!2d-86.12447800394534!3d11.958561742224841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scarazo%20hospitales!5e0!3m2!1ses-419!2sni!4v1726845958791!5m2!1ses-419!2sni"
+                width="300"
+                height="350"
+                style="border: 1px solid #000"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa Carazo"
+              ></iframe>
             </div>
           </div>
         </div>
         <div class="inicio__contenedor noOpacity">
           <div class="localizacion">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Similique omnis sit,
-            </p>
+            <p>Hospital Regional Santiago, Jinotepe</p>
             <div>
-              <img src="" alt="Ciudad" />
+              <img src="Img/svg.png" alt="Hospital Santiago" />
             </div>
           </div>
           <div class="localizacion">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Similique omnis sit,
-            </p>
+            <p>Hospital Del Maestro, Diriamba</p>
             <div>
-              <img src="" alt="Ciudad" />
+              <img src="Img/svg.png" alt="Hospital del Maestro" />
             </div>
           </div>
           <div class="localizacion">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Similique omnis sit,
-            </p>
+            <p>Hospital Monte España, San Marcos</p>
             <div>
-              <img src="" alt="Ciudad" />
+              <img src="Img/svg.png" alt="Hospital Monte España" />
             </div>
           </div>
         </div>
@@ -385,39 +410,18 @@
           </button>
         </div>
         <div class="inicio__contenedor">
-          <button>Agregar</button>
-          <div>
-            <table>
-              <th>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-              </th>
-              <td>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-              </td>
-            </table>
+          <div class="admision">
+            <h2>Registro De Admisiones Hospitalarias</h2>
+            <div class="admision__contenedor">
+              <ol class="contenedor__item" id="admisiones-lista"></ol>
+            </div>
           </div>
+          <button id="agregar-admision" class="btn">
+            <img
+              src="node_modules/bootstrap-icons/icons/plus.svg"
+              alt="Agregar"
+            />
+          </button>
         </div>
       </section>
 
@@ -427,45 +431,38 @@
           <button class="btnRegresar" onclick="regresarHistorial()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
         <div class="inicio__contenedor">
-          <div class="inicio__contenedor">
-            <button>Agregar</button>
-            <div>
-              <table>
-                <th>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                </th>
-                <td>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                </td>
-              </table>
-            </div>
+          <div class="admision">
+            <h2>Registro De Vacunaciones</h2>
+            <ol id="vacunacion-lista"></ol>
+          </div>
+          <button id="abrir-modalVacunacion" class="btn">
+            <img
+              src="node_modules/bootstrap-icons/icons/plus.svg"
+              alt="Agregar"
+            />
+          </button>
+        </div>
+
+        <!-- Ventana Modal -->
+        <div id="modalVacunacion" class="modal">
+          <div class="contenedor-modal">
+            <span id="cerrar-modalVacunacion" class="cerrar">&times;</span>
+            <h3>Agregar Vacunación</h3>
+            <label for="nombre-vacuna">Tipo de Vacuna:</label>
+            <input
+              type="text"
+              id="nombre-vacuna"
+              placeholder="Nombre de la vacuna"
+              required
+            />
+            <label for="fecha-vacuna">Fecha y Hora:</label>
+            <input type="datetime-local" id="fecha-vacuna" required />
+            <button id="guardarVacuna">Guardar</button>
           </div>
         </div>
       </section>
@@ -476,17 +473,39 @@
           <button class="btnRegresar" onclick="regresarActividades()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
         <div class="inicio__contenedor">
-          <button>Agregar</button>
-          <ul>
-            <li>1-</li>
-            <li>2-</li>
-            <li>3-</li>
-          </ul>
+          <div class="admision">
+            <h2>Registro De Glucosa</h2>
+            <ol id="glucosa-lista"></ol>
+          </div>
+          <button id="abrir-modalGlucosa" class="btn">
+            <img
+              src="node_modules/bootstrap-icons/icons/plus.svg"
+              alt="Agregar"
+            />
+          </button>
+        </div>
+
+        <!-- Ventana Modal -->
+        <div id="modalGlucosa" class="modal">
+          <div class="contenedor-modal">
+            <span id="cerrar-modalGlucosa" class="cerrar">&times;</span>
+            <h3>Agregar Registro de Glucosa</h3>
+            <label for="nivel-glucosa">Nivel de Glucosa (mg/dL):</label>
+            <input
+              type="number"
+              id="nivel-glucosa"
+              placeholder="Ej. 110"
+              required
+            />
+            <label for="fecha-glucosa">Fecha y Hora:</label>
+            <input type="datetime-local" id="fecha-glucosa" required />
+            <button id="guardarGlucosa">Guardar</button>
+          </div>
         </div>
       </section>
 
@@ -496,17 +515,46 @@
           <button class="btnRegresar" onclick="regresarActividades()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
         <div class="inicio__contenedor">
-          <button>Agregar</button>
-          <ul>
-            <li>1-</li>
-            <li>2-</li>
-            <li>3-</li>
-          </ul>
+          <div class="admision">
+            <h2>Registro De Citas Médicas</h2>
+            <ol id="citas-lista"></ol>
+          </div>
+          <button id="abrir-modalCita" class="btn">
+            <img
+              src="node_modules/bootstrap-icons/icons/plus.svg"
+              alt="Agregar"
+            />
+          </button>
+        </div>
+
+        <!-- Ventana Modal -->
+        <div id="modalCita" class="modal">
+          <div class="contenedor-modal">
+            <span id="cerrar-modal" class="cerrar">&times;</span>
+            <h3>Agendar Cita Médica</h3>
+            <label for="doctor-name">Nombre del Doctor:</label>
+            <input
+              type="text"
+              id="doctor-name"
+              placeholder="Ej. Dr. Pérez"
+              required
+            />
+            <label for="specialty">Especialidad:</label>
+            <input
+              type="text"
+              id="specialty"
+              placeholder="Ej. Cardiólogo"
+              required
+            />
+            <label for="appointment-date">Fecha y Hora:</label>
+            <input type="datetime-local" id="appointment-date" required />
+            <button id="save-appointment">Guardar</button>
+          </div>
         </div>
       </section>
 
@@ -516,53 +564,126 @@
           <button class="btnRegresar" onclick="regresarActividades()">
             <img
               src="node_modules/bootstrap-icons/icons/backspace.svg"
-              alt=""
+              alt="Retroceder"
             />
           </button>
         </div>
         <div class="inicio__contenedor">
-          <button>Agregar</button>
-          <ul>
-            <li>1-</li>
-            <li>2-</li>
-            <li>3-</li>
-          </ul>
+          <div class="admision">
+            <h2>Registro De Medicamentos</h2>
+            <ol id="medicamentoLista">
+            </ol>
+          </div>
+          <button id="abrir-modalMedicamento" class="btn">
+            <img src="node_modules/bootstrap-icons/icons/plus.svg" alt="" />
+          </button>
+        </div>
+
+        <!-- Ventana Modal -->
+        <div id="modalMedicamento" class="modal">
+          <div class="contenedor-modal">
+            <span id="cerrar-modalMedicamento" class="cerrar">&times;</span>
+            <h3>Agregar Medicamento</h3>
+            <label for="medication-name">Nombre del Medicamento:</label>
+            <input type="text" id="medication-name" placeholder="Ej. Paracetamol" required>
+            <label for="dosage">Dosis:</label>
+            <input type="text" id="dosage" placeholder="Ej. 1 tableta" required>
+            <label for="frequency">Frecuencia:</label>
+            <input type="text" id="frequency" placeholder="Ej. Cada 12 horas" required>
+            <button id="save-medication">Guardar</button>
+          </div>
         </div>
       </section>
 
       <!-- Sección Educación -->
-      <section id="educacion">
-        <div class="inicio__contenedor">
+      <section id="educacion" style="display: none" class="inicio">
+        <div class="educacion__contenedor">
           <aside>
-            <h2>Titulo</h2>
-            <p>Texto</p>
+            <h2>Titulo del Aside</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+              dolores, deleniti ipsa ipsam eveniet veritatis possimus est quasi
+              totam, alias ea autem. Id ab inventore ea voluptas harum vel
+              veritatis. Labore asperiores eius, dolorum sit sapiente delectus
+              laudantium iure tempore facere, unde error ab fugit quisquam aut
+              voluptates qui cumque, corporis dolor architecto commodi enim
+              reprehenderit aliquid temporibus! Id, distinctio!
+            </p>
           </aside>
-          <div></div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+              temporibus cum cupiditate nam ex odio a tenetur, dolor sint
+              repudiandae sed officia qui, tempora fugiat dignissimos vero.
+              Neque, vel corporis? Obcaecati possimus, vero tempore nam
+              doloremque eligendi est dolores? Vel, nulla? Enim, esse neque
+              natus reiciendis dolorem perspiciatis officia quisquam harum
+              tempore fuga doloribus nostrum consequuntur quae quasi ab dolorum?
+              Beatae, doloremque sed, voluptates dolores assumenda voluptatem
+              rerum autem consequuntur voluptatum asperiores nostrum eveniet
+              maxime adipisci ut accusamus architecto totam ad laudantium!
+              Perferendis quisquam in rerum iste voluptatum consequuntur est.
+              Minima aperiam beatae eum facilis molestiae repellendus molestias
+              enim, rem tenetur accusantium quasi a. Accusamus pariatur
+              reprehenderit nam laboriosam sunt ut excepturi, harum dolorem,
+              illo perspiciatis doloremque asperiores sequi aut?
+            </p>
+
+            <iframe
+              width="500"
+              height="300"
+              src="https://www.youtube.com/embed/IYJNTVLyRrs?si=CyFCVW5tjmgeR-cq"
+              title="Diabetesr"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
       <!-- Sección Perfil -->
-      <section id="perfil" class="inicio">
+      <section id="perfil" style="display: none" class="inicio">
         <div class="inicio__contenedor">
-          <div>
-            <img src="" alt="Foto perfil" />
-            <h3>Nombre</h3>
+          <div class="perfil__imagen">
+            <img src="Img/svg.png" alt="Foto perfil" />
+            <h3>Juan Perez</h3>
           </div>
-          <div>
-            <h3>configuración:</h3>
-            <p>texto párrafo</p>
-            <h3>configuración:</h3>
-            <p>texto párrafo</p>
-            <h3>configuración:</h3>
-            <p>texto párrafo</p>
-            <h3>configuración:</h3>
-            <p>texto párrafo</p>
-            <h3>configuración:</h3>
-            <p>texto párrafo</p>
+          <div class="perfil__contenido">
+            <div class="confi">
+              <h2>Configuracion:</h2>
+              <p>texto</p>
+            </div>
+            <div class="confi">
+              <h2>Configuracion:</h2>
+              <p>texto</p>
+            </div>
+            <div class="confi">
+              <h2>Configuracion:</h2>
+              <p>texto</p>
+            </div>
+            <div class="confi">
+              <h2>Configuracion:</h2>
+              <p>texto</p>
+            </div>
           </div>
-          <button>Cerrar Sesion</button>
+          <button class="btn perfil" onclick="CerrarSesion()">
+            Cerrar Sesion
+          </button>
         </div>
       </section>
+
+      <footer class="footer">
+        <div class="footer__contenido">
+          <p>Creado por estudiantes de la universidad</p>
+          <h3>Ricardo Morales Aviles</h3>
+          <p>&#169; 2024</p>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
+
+<!-- 
+  Diseño responsivo
+-->
